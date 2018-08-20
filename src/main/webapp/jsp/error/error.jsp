@@ -9,8 +9,7 @@
 <%@ include file="/static/common/tagLibs.jsp" %>
 <html>
 <head>
-    <title>test111112222</title>
-    <title>test1113311</title>
+    <title>test</title>
 </head>
 <body>
 <h1>4   0   4</h1>
