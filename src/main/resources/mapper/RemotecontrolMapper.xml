@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.basewin.kms.dao.RemotecontrolDao">
+
+
+    <select id="getRemotecontrol" resultType="com.basewin.kms.entity.RemotecontrolBeen"
+            parameterType="com.basewin.kms.entity.RemotecontrolBeen">
+        select id,serialnumber,appport,isoccupation from remotecontrol WHERE
+        1=1
+        <if test="serialnumber!=null and serialnumber!=''">
+            and serialnumber = #{serialnumber}
+        </if>
+        <if test="isoccupation!=null and isoccupation!=''">
+            and isoccupation = #{isoccupation}
+        </if>
+    </select>
+    <update id="updateRemotecontrol" parameterType="com.basewin.kms.entity.RemotecontrolBeen">
+        UPDATE remotecontrol
+        <set>
+            <if test="appport!=null and appport!=''">
+                appport = #{appport},
+            </if>
+            <if test="isoccupation!=null and isoccupation!=''">
+                isoccupation = #{isoccupation},
+            </if>
+        </set>
+        WHERE serialnumber=#{serialnumber}
+    </update>
+    <insert id="insertRemotecontrol" parameterType="com.basewin.kms.entity.RemotecontrolBeen">
+        insert into remotecontrol (  serialnumber ,appport,isoccupation ) values(
+		#{serialnumber},#{appport},0)
+
+    </insert>
+    <delete id="deleteRemotecontrol" parameterType="com.basewin.kms.entity.RemotecontrolBeen">
+        delete from remotecontrol where serialnumber = #{serialnumber}
+    </delete>
+</mapper>

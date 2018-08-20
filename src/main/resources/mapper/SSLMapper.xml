@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.basewin.kms.dao.SSLDao">
+
+   <!-- useCache="true" flushCache="true"-->
+    <select id="getClientbks" resultType="com.basewin.kms.entity.SSLBeen" parameterType="String" useCache="true">
+        select id,serialnumber,bkspath,cerpath,addtime,updatetime from app_sslclient WHERE serialnumber=#{serialnumber};
+    </select>
+    <select id="getALL" resultType="com.basewin.kms.entity.SSLBeen" useCache="true">
+        select id,serialnumber,bkspath,cerpath,addtime,updatetime from app_sslclient ;
+    </select>
+    <update id="updates" parameterType="com.basewin.kms.entity.SSLBeen" flushCache="true">
+        UPDATE app_sslclient
+        <set>
+            <if test="bkspath!=null and bkspath!=''">
+                bkspath = #{bkspath},
+            </if>
+            <if test="cerpath!=null and cerpath!=''">
+                cerpath = #{cerpath},
+            </if>
+            updatetime = now()
+        </set>
+        WHERE serialnumber=#{serialnumber}
+    </update>
+    <insert id="inserts" parameterType="com.basewin.kms.entity.SSLBeen" flushCache="true">
+insert into app_sslclient (  serialnumber ,bkspath ,cerpath, addtime,updatetime ) values(
+		#{serialnumber},#{bkspath},#{cerpath},now(),now())
+
+    </insert>
+</mapper>

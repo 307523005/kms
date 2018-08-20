@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.basewin.kms.dao.SMKeyDao">
+    <select id="getkey" resultType="com.basewin.kms.entity.SMKeyBeen" parameterType="String" >
+        select id,serialnumber,pubk,prik,addtime,updatetime from app_smsecretkey WHERE serialnumber=#{serialnumber};
+    </select>
+    <update id="updates" parameterType="com.basewin.kms.entity.SMKeyBeen">
+        UPDATE app_smsecretkey
+        <set>
+            <if test="pubk!=null and pubk!=''">
+                pubk = #{pubk},
+            </if>
+            <if test="prik!=null and prik!=''">
+                prik = #{prik},
+            </if>
+            updatetime = now()
+        </set>
+        WHERE serialnumber=#{serialnumber}
+    </update>
+    <insert id="inserts" parameterType="com.basewin.kms.entity.SMKeyBeen">
+insert into app_smsecretkey (  serialnumber ,pubk ,prik, addtime,updatetime ) values(
+		#{serialnumber},#{pubk},#{prik},now(),now())
+
+    </insert>
+</mapper>

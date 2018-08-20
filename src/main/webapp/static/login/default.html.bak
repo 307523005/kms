@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<title>yueylong专属</title>
+<meta name="keywords" content="yueylong专属"/>
+<meta name="description" content="yueylong专属"/>
+
+<link rel=stylesheet href="css/style.css">
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class=wrap id=wrap>
+    <div class=wrapper>
+        <div class=header>
+            <div class="head clearfix">
+                <div class=logo_box>
+                    <h1 class=hidden>yueylong专属</h1>
+                    <a href='javascript:;' class=logo_link><img src="picture/logo.png" alt=xxx></a>
+                </div>
+                <div class=nav_box id=nav_box>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" onclick="_loginModal()">登录</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">注册</a>
+                        </li>
+                    </ul>
+                    <span class=ic_line></span>
+                </div>
+            </div>
+        </div>
+        <div class=page_wp id=page_wp>
+            <div class="page page_1"><span class="page_bg scale_box"></span>
+                <div class=img_box><img src="" alt=""></div>
+                <div class="txt_box scale_box">
+                    <h2>yueylong专属</h2>
+                    <p class=txt_brief>生命的路上，耐心使你获得力量，耐心使你认清方向;耐心使你坦途疾进，耐心使你少遭波浪。寻着古往今来的路，在耐心的帮助下看生活。让我们手握耐心给我们的耐得寂寞的意志和品质，脚踩耐心给我们的超出凡俗的雄心壮志，载着耐心给我们的永不服输的信念，向生活中的成功，出发吧!</div>
+            </div>
+            <div class="page page_2"><span class="page_bg scale_box"></span>
+                <div class=img_box><img src="" alt=""></div>
+                <div class="txt_box scale_box">
+                    <h2>yueylong专属</h2>
+                    <p class=txt_brief>不要将过去看成是寂寞的，因为这是再也不会回头的。应想办法改善现在，因为那就是你，毫不畏惧地鼓起勇气向着未来前进。</div>
+            </div>
+            <div class="page page_3"><span class="page_bg scale_box"></span>
+                <div class=img_box><img src="" alt=""></div>
+                <div class="txt_box scale_box">
+                    <h2>yueylong专属</h2>
+                    <p class=txt_brief>
+                        机会对于任何人都是公平的，它在我们身边的时候，不是打扮的花枝招展，而是普普通通的，根本就不起眼。看起来耀眼的机会不是机会，是陷阱;真正的机会最初都是朴素的，只有经过主动与勤奋，它才变得格外绚烂。
+                </div>
+            </div>
+            <div class="page page_4"><span class="page_bg scale_box"></span>
+                <div class=img_box><img src="" alt=""></div>
+                <div class="light_wp scale_box"><span class=light_box><i class=light_1></i> <i class=light_2></i> <i
+                        class=light_3></i> <i class=light_4></i> <i class=light_5></i></span></div>
+                <span class="meteor_box scale_box"></span>
+                <div class="txt_box scale_box">
+                    <h2>yueylong专属</h2>
+                    <p class=txt_brief>
+                        人生就是一出戏，怎么演都是练好滴，导演就是咱自己，想怎么演都是可以滴，节拍快慢是咱可以拿捏滴，不要以为自己有问题，不努力是不行滴，遇到坎坷莫消极，需要耐心对待滴。
+                </div>
+            </div>
+        </div>
+        <div class="star_wp scale_box" id=star_wp><span class=star_bg></span> <span class=star_box></span></div>
+        <canvas id=canvas></canvas>
+
+        <div class=btn_control id=btn_control>
+            <a href=javascript:; class=cur></a>
+            <a href=javascript:;></a>
+            <a href=javascript:;></a>
+            <a href=javascript:;></a>
+        </div>
+        <div class=footer>
+            <div class=foot>
+                <p>© 2014-2017 yueylong 版权所有</div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:#000;opacity:0.3;filter: alpha(opacity=30);">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+			 <h2 class="modal-title" id="myModalLabel" align="center">登录</h2>  
+				<!--   以下是登录的form表单 -->  
+            <form class="form-horizontal" role="form" name="f" action="login" method="POST">  
+  <div class="form-group" id="div1">  
+    <label for="firstname" class="col-sm-2 control-label">用户名：</label>  
+    <div class="col-sm-10" id="user">  
+      <input type="text" class="form-control" id="name" placeholder="请输入名字" style="width: 300" name="username"  
+      class="tooltip-test"  
+      data-toggle="tooltip" data-placement="bottom"  
+        title="请输入6——8位的字母或数字任意组合"  
+        data-trigger="focus"  
+     onblur="a()"  
+      >  
+      <label id="n" style="color: red;"></label>  
+    </div>  
+  </div>  
+  <div class="form-group " id="div2">  
+    <label for="lastname" class="col-sm-2 control-label">密   码：</label>  
+    <div class="col-sm-10" id="pd">  
+      <input type="password" class="form-control" id="pwd"  onblur="a()"  placeholder="请输入密码" style="width: 300" name="password"  
+        class="tooltip-test"  
+      data-toggle="tooltip" data-placement="bottom"  
+        title="请输入6位密码"  
+        data-trigger="focus"   
+      >  
+       <label id="p" style="color: red;"></label>  
+    </div>  
+  </div>  
+  <div class="form-group">  
+    <div class="col-sm-offset-2 col-sm-10">  
+      <div class="checkbox">  
+        <label>  
+          <input type="checkbox">请记住我  
+        </label>  
+      </div>  
+    </div>  
+  </div>  
+  <div class="form-group">  
+    <div class="col-sm-offset-2 col-sm-10">  
+      <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;" disabled="disabled" id="denglu">登录</button>  
+    </div>  
+  </div>  
+</form>  
+</div>  
+              <div class="modal-footer" style="background-color:#C1FFC1;">  
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>  
+                <button type="button" class="btn btn-primary">提交更改</button>  
+            </div>  
+			</div>  
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="js/vendors.js"></script>
+<script src="js/index.js"></script>
+
+<script type="text/javascript" src="js/dd_png_min.js"></script>
+<script type="text/javascript">
+    var links = document.getElementsByTagName("a");
+    for (var i = 0, l = links.length; i < l; i++) {
+        links[i].setAttribute("hideFocus", true);
+    }
+</script>
+
+
+<audio autoplay>
+    <!--<source src="http://pan.aaaxt.cc/data/f_9618.mp3" loop="-1" type="audio/mpeg"> -->
+    <source src="http://cgtblog.oss-cn-shanghai.aliyuncs.com/mp3/Victory.mp3" loop="-1" type="audio/mpeg">
+</audio>
+
+<script type="text/javascript">
+    $(function () {
+        $('#myModal').modal('hide')
+        $('#myModal').on('show.bs.modal', centerModals);
+        //禁用空白处点击关闭
+        $('#myModal').modal({
+            backdrop: 'static',
+            keyboard: false,//禁止键盘
+            show:false
+        });
+        //页面大小变化是仍然保证模态框水平垂直居中
+        $(window).on('resize', centerModals);
+    });
+    function centerModals() {
+        $('#myModal').each(function(i) {
+            var $clone = $(this).clone().css('display','block').appendTo('body');
+            var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+            top = top > 0 ? top : 0;
+            $clone.remove();
+            $(this).find('.modal-content').css("margin-top", top);
+        });
+    }
+
+    function _loginModal(){
+       $('#myModal').modal('show');
+    }
+</script>
+
+    </body>
+</html>
+
+<!-- 音乐代码 -->
+<!--<EMBED src="http://www.kugou.com/fmweb/html/index.html?chanelId=11" autostart="true" loop="true"width="0" height="0" > -->
+
+
