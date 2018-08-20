@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * mq消息推送12
+ * mq消息推送
  */
 @Controller
 @RequestMapping("/ProducerController")
